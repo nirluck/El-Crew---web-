@@ -3,467 +3,613 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EL CREW — Vibe With Us | Marketing y consultoría para la industria del entretenimiento</title>
-<meta name="description" content="Tu equipo extendido para impulsar tu proyecto en la industria del entretenimiento. Marketing digital, estrategia y consultoría con alcance en LATAM, Iberoamérica y US Latin.">
-<meta name="theme-color" content="#2c00ff">
+<title>EL CREW — Tu talento, amplificado | Marketing digital para artistas y la industria musical</title>
+<meta name="description" content="Marketing digital para artistas y la industria musical: crecimiento de audiencias, redes y contenido, lanzamientos, influencers y promoción. LATAM, Iberoamérica y US Latin.">
+<meta name="theme-color" content="#2b00ff">
 <link rel="canonical" href="https://somoselcrew.com/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EL CREW">
-<meta property="og:title" content="EL CREW — Vibe With Us">
-<meta property="og:description" content="Tu equipo extendido para impulsar tu proyecto en la industria del entretenimiento. Alcance LATAM, Iberoamérica &amp; US Latin.">
+<meta property="og:title" content="EL CREW — Tu talento, amplificado">
+<meta property="og:description" content="Marketing digital para artistas y la industria musical en LATAM, Iberoamérica y US Latin.">
 <meta property="og:url" content="https://somoselcrew.com/">
 <meta property="og:locale" content="es_MX">
+<meta property="og:image" content="https://somoselcrew.com/assets/v2/og-el-crew.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EL CREW — Tu talento, amplificado. Marketing digital para artistas en LATAM, Iberoamérica y US Latin.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://somoselcrew.com/assets/v2/og-el-crew.jpg">
 
-<link rel="icon" href="assets/icons/logo-nav.svg" type="image/svg+xml">
+<link rel="icon" href="assets/v2/logo-nav.svg" type="image/svg+xml">
 
-<!-- Tipografías del diseño: Michroma (títulos), Roboto / Roboto Flex (texto), Inter (formulario) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:wght@400;700&family=Roboto+Flex:wght@500&family=Inter:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Space+Mono:wght@400;700&family=Unbounded:wght@700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css">
+<script>
+  /* Las animaciones de entrada esconden contenido sólo con JS. Se marca antes del primer
+     pintado; si main.js no llega a correr, a los 3 s se quita y todo queda visible. */
+  document.documentElement.classList.add("js");
+  setTimeout(function () { if (!window.elCrewListo) document.documentElement.classList.remove("js"); }, 3000);
+</script>
+<link rel="stylesheet" href="css/styles.css?v=14">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EL CREW",
+  "slogan": "Vibe with us",
+  "url": "https://somoselcrew.com/",
+  "email": "management@somoselcrew.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX" },
+  "sameAs": ["https://www.instagram.com/somoselcrew"]
+}
+</script>
 </head>
 <body>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="saltar" href="#principal">Saltar al contenido</a>
 
-<!-- =============================================================== HEADER -->
-  <header class="site-header" id="site-header">
-    <div class="site-header__spacer"></div>
+<!-- ============================================================ CABECERA -->
+<header class="cabecera" id="cabecera">
+  <div class="cabecera__bloque">
 
-    <nav class="nav" aria-label="Navegación principal">
-      <div class="nav__block">
+    <div class="cabecera__col cabecera__col--inicio">
+      <nav class="cabecera__nav" aria-label="Principal">
+        <a href="#nosotros" class="cabecera__enlace">Nosotros</a>
+        <a href="#servicios" class="cabecera__enlace">Servicios</a>
+        <a href="#proceso" class="cabecera__enlace">Proceso</a>
+        <a href="#clientes" class="cabecera__enlace">Clientes</a>
+      </nav>
+      <!-- Selector de idioma: se activa cuando exista la versión en inglés. -->
+      <p class="idioma idioma--movil" hidden><b>ES</b><span>/</span><a href="/en/" lang="en">EN</a></p>
+    </div>
 
-        <a class="nav__brand" href="#top" aria-label="EL CREW — inicio">
-          <img src="assets/icons/logo-nav.svg" alt="EL CREW" width="77" height="54">
-        </a>
+    <div class="cabecera__col cabecera__col--centro">
+      <a class="cabecera__marca" href="#inicio" aria-label="EL CREW — inicio">
+        <img src="assets/v2/logo-nav.svg" alt="EL CREW — Vibe with us" width="77" height="54">
+      </a>
+    </div>
 
-        <div class="nav__center">
-          <div class="nav__links">
-            <a class="nav__link" href="#top">Home</a>
-            <a class="nav__link" href="#nosotros">Nosotros</a>
-            <a class="nav__link" href="#servicios">Services</a>
+    <div class="cabecera__col cabecera__col--fin">
+      <p class="idioma idioma--escritorio" hidden><b>ES</b><span>/</span><a href="/en/" lang="en">EN</a></p>
+      <a class="cabecera__social" href="https://www.instagram.com/somoselcrew" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EL CREW">
+        <img src="assets/v2/icon-instagram-nav.svg" alt="" width="24" height="24">
+      </a>
+      <a class="cta cta--chico cabecera__cta" href="#contacto">Contáctanos</a>
+      <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <img src="assets/v2/icon-menu.svg" alt="" width="20" height="14">
+      </button>
+    </div>
+
+  </div>
+
+  <nav class="menu-movil" id="menu-movil" aria-label="Menú" hidden>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#clientes">Clientes</a>
+    <a class="cta" href="#contacto">Contáctanos <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+  </nav>
+</header>
+
+<main id="principal">
+
+<!-- ================================================================ HERO -->
+<section class="hero" id="inicio">
+  <div class="hero__bloque">
+
+    <div class="hero__texto">
+      <div class="hero__encabezado">
+        <svg class="hero__garabato solo-escritorio trazo" data-entra="trazo" style="--i:0" width="82" height="64" viewBox="0 0 82.0003 64.3523" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00018 60.0001C21.5002 71.5001 36.5002 52.0001 4.00018 23.0001C33.0002 51.0001 43.5002 51.5001 37.5002 1.00011C42.5002 34.5001 58.5002 47.5001 67.0002 19.5001C64.0002 35.5001 67.0002 46.0001 81.0002 44.0001" stroke="#D51115" pathLength="1"/></svg>
+        <svg class="hero__garabato solo-movil trazo" data-entra="trazo" style="--i:0" width="82" height="64" viewBox="0 0 82.0003 64.3523" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00018 60.0001C21.5002 71.5001 36.5002 52.0001 4.00018 23.0001C33.0002 51.0001 43.5002 51.5001 37.5002 1.00011C42.5002 34.5001 58.5002 47.5001 67.0002 19.5001C64.0002 35.5001 67.0002 46.0001 81.0002 44.0001" stroke="#D51115" pathLength="1"/></svg>
+        <p data-entra="sube" style="--i:1" class="hero__eyebrow">Marketing digital · Música</p>
+        <div class="hero__marca-titulo">
+          <h1 class="hero__titulo">
+            <span data-entra="linea" style="--i:2" class="display hero__linea">Tu talento</span>
+            <span data-entra="linea" style="--i:3" class="display contorno hero__linea">Amplificado</span>
+          </h1>
+          <div class="hero__subrayado" aria-hidden="true">
+            <svg class="solo-escritorio trazo" data-entra="trazo" style="--i:6" width="503" height="38" viewBox="0 0 503.227 37.8854" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00017 17.4361C99.2135 -0.563866 200.814 -2.36387 291.125 8.43613C336.28 13.8361 358.858 26.4361 347.569 35.4361C336.28 42.6361 328.378 21.0361 341.925 13.8361C381.436 -5.96387 449.169 1.23613 502.227 8.43613" stroke="#D51115" pathLength="1"/></svg>
+            <svg class="solo-movil trazo" data-entra="trazo" style="--i:6" width="316" height="23" viewBox="0 0 315.76 22.9332" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00016 10.5877C62.4802 0.0877473 126.08 -0.962253 182.614 5.33775C210.88 8.48775 225.014 15.8377 217.947 21.0877C210.88 25.2877 205.934 12.6877 214.414 8.48775C239.147 -3.06225 281.547 1.13775 314.76 5.33775" stroke="#D51115" pathLength="1"/></svg>
           </div>
         </div>
+        <p data-entra="sube" style="--i:4" class="hero__bajada">Estrategia, contenido y promoción para que tu música llegue más lejos.</p>
+      </div>
 
-        <div class="nav__end">
-          <a class="nav__social" href="https://www.instagram.com/somoselcrew" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EL CREW">
-            <img src="assets/icons/instagram-logo.svg" alt="" width="24" height="24">
-          </a>
-          <a class="btn" href="#contacto">Contáctanos</a>
-          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Abrir menú">
-            <span></span><span></span><span></span>
-          </button>
+      <div data-entra="sube" style="--i:5" class="hero__acciones">
+        <a class="cta" href="#contacto">Solicitar Campaña <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+        <a class="enlace-linea" href="#servicios"><span class="enlace-linea__texto">Ver Servicios</span></a>
+      </div>
+    </div>
+
+    <div class="hero__arte" aria-hidden="true">
+      <img data-entra="cortina" style="--i:1" class="hero__paralelogramo" src="assets/v2/paralelogramo-azul.svg" alt="" width="427" height="516">
+
+      <!-- Budy camina y silba (SVG animado con CSS); con movimiento reducido, la pose del Figma -->
+      <picture>
+        <source srcset="assets/v2/budy-quieto.svg" media="(prefers-reduced-motion: reduce)">
+        <img data-entra="escala" style="--i:3" class="bocina" src="assets/v2/budy-camina.svg" alt="" width="507" height="630">
+      </picture>
+
+      <!-- Insignia «Vibe with us» como vinilo: el disco gira, el reflejo no -->
+      <div class="insignia" data-entra="vinilo" style="--i:6">
+        <div class="insignia__giro">
+          <svg class="insignia__disco" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <defs>
+              <path id="insignia-circulo" d="M60 60 m-40 0 a40 40 0 1 1 80 0 a40 40 0 1 1 -80 0"/>
+            </defs>
+            <circle class="vinilo__disco" cx="60" cy="60" r="59"/>
+            <circle class="vinilo__borde" cx="60" cy="60" r="58.4"/>
+            <g class="vinilo__surcos" transform="translate(60 60)"><circle r="21"/><circle r="23.2"/><circle r="25.4"/><circle r="27.6"/><circle r="29.8"/><circle r="32"/><circle r="34.2"/><circle r="36.4"/><circle r="50.8"/><circle r="52.8"/><circle r="54.8"/><circle r="56.6"/></g>
+            <text class="vinilo__texto"><textPath href="#insignia-circulo" textLength="251.3" lengthAdjust="spacing">VIBE WITH US · VIBE WITH US ·</textPath></text>
+            <circle class="vinilo__etiqueta" cx="60" cy="60" r="18.6"/>
+          </svg>
+          <img class="insignia__estrella" src="assets/v2/badge-estrella.svg" alt="" width="35" height="35">
+          <svg class="insignia__eje" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="1.8"/></svg>
         </div>
-
-      </div>
-    </nav>
-
-    <div class="nav__mobile" id="nav-mobile">
-      <div class="nav__mobile-inner">
-        <a href="#top">Home</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Services</a>
-        <a href="#clientes">Clientes</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </div>
-  </header>
-
-<!-- ================================================================= HERO -->
-<div class="hero">
-
-  <div class="hero__headroom"></div>
-
-  <div class="hero__stage" id="top">
-    <div class="hero__block">
-      <div class="hero__content">
-        <img class="hero__logo" src="assets/icons/logo-hero.svg" alt="EL CREW — Vibe With Us" width="300" height="212">
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<main id="main">
-
-<div class="spacer spacer--32"></div>
-
-<!-- =========================================================== KEYWORDS -->
-<section class="section keywords" aria-label="Nuestros valores">
-  <div class="keywords__block">
-    <div class="keywords__viewport">
-      <div class="keywords__track eyebrow">
-        <span>Innovación</span>
-        <span>Liderazgo</span>
-        <span>Estrategia</span>
-        <span>Arte</span>
-        <span>Entretenimiento</span>
-        <span>Música</span>
-        <span>Comunicación</span>
-      </div>
-      <div class="keywords__track eyebrow" data-clone aria-hidden="true">
-        <span>Innovación</span>
-        <span>Liderazgo</span>
-        <span>Estrategia</span>
-        <span>Arte</span>
-        <span>Entretenimiento</span>
-        <span>Música</span>
-        <span>Comunicación</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="spacer spacer--32"></div>
-
-<!-- =========================================================== NOSOTROS -->
-<section class="section about" id="nosotros">
-  <div class="about__block">
-
-    <div class="about__text" data-reveal>
-      <p class="eyebrow">Nosotros</p>
-      <h2 class="h2">Te Apoyamos en cada paso,<br>con soluciones adaptadas a tu ritmo</h2>
-      <p class="muted">Diseñamos estrategias creativas y efectivas para impulsar proyectos en la industria del entretenimiento. Con alcance en LATAM, Iberoamérica y US Latin, conectamos talento, marcas y audiencias a través de medios, productoras y artistas, siempre con soluciones a la medida y visión de crecimiento a largo plazo.</p>
-      <p><a class="btn" href="#contacto">Contáctanos</a></p>
-    </div>
-
-    <div class="about__art" data-reveal style="--reveal-delay:120ms">
-      <img class="about__rocket" src="assets/icons/rocket.svg" alt="Ilustración de un cohete despegando" width="310" height="391">
-    </div>
-
-  </div>
-</section>
-
-<div class="spacer spacer--64"></div>
-
-<!-- ========================================================== SERVICIOS -->
-<section class="section services" id="servicios">
-  <div class="services__block">
-
-    <div class="services__intro" data-reveal>
-      <h2 class="h2">Nuestros servicios</h2>
-      <p class="lede">Ofrecemos soluciones integrales para impulsar tu carrera en la industria del entretenimiento, desde marketing digital hasta consultoría especializada.</p>
-    </div>
-
-    <!-- Marketing -->
-    <div class="services__group">
-      <div class="services__title" data-reveal>
-        <h3 class="h4">Marketing</h3>
-        <img class="services__rule" src="assets/icons/title-rule.svg" alt="" width="440" height="8">
+        <span class="insignia__brillo"></span>
       </div>
 
-      <div class="services__grid">
-        <article class="service" data-reveal style="--reveal-delay:0ms">
-          <span class="badge"><img src="assets/icons/users-three.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Crecimiento de audiencias</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:60ms">
-          <span class="badge"><img src="assets/icons/trend-up.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Redes sociales y contenido</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:120ms">
-          <span class="badge"><img src="assets/icons/currency-dollar-simple.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Desarrollo de estrategias de promoción (digital y OOH)</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:180ms">
-          <span class="badge"><img src="assets/icons/user-focus.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Influencer Marketing</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:240ms">
-          <span class="badge"><img src="assets/icons/fediverse-logo.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Relaciones públicas</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:60ms">
-          <span class="badge"><img src="assets/icons/chart-line.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Análisis de datos y optimización</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:120ms">
-          <span class="badge"><img src="assets/icons/palette.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Dirección creativa y diseño gráfico</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:180ms">
-          <span class="badge"><img src="assets/icons/lightbulb.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Diseño de estrategias de lanzamiento</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:240ms">
-          <span class="badge"><img src="assets/icons/video-camera.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Producción audiovisual</p>
-        </article>
-      </div>
-    </div>
-
-    <!-- Consultoría -->
-    <div class="services__group">
-      <div class="services__title" data-reveal>
-        <h3 class="h4">Consultoría</h3>
-        <img class="services__rule" src="assets/icons/title-rule.svg" alt="" width="440" height="8">
-      </div>
-
-      <div class="services__grid">
-        <article class="service" data-reveal style="--reveal-delay:0ms">
-          <span class="badge"><img src="assets/icons/tree-structure.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Estructura de carrera artística</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:80ms">
-          <span class="badge"><img src="assets/icons/handshake.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Gestión de acuerdos comerciales</p>
-        </article>
-        <article class="service" data-reveal style="--reveal-delay:160ms">
-          <span class="badge"><img src="assets/icons/waveform.svg" alt="" width="24" height="24"></span>
-          <p class="service__label">Distribución musical</p>
-        </article>
-      </div>
+      <p data-entra="derecha" style="--i:7" class="display contorno hero__territorios">LATAM<br>/ Iberoamérica<br>/ US Latin</p>
     </div>
 
   </div>
 </section>
 
-<div class="spacer spacer--64"></div>
+<!-- ============================================================ NOSOTROS -->
+<!-- La banda va dentro de Nosotros: juntas son la segunda pantalla. -->
+<section class="nosotros" id="nosotros">
+  <div data-entra="aparece" style="--i:0" class="terminos" aria-label="Lo que hacemos">
+    <div class="terminos__pista">
+      <ul class="terminos__grupo">
+        <li class="display">Crecimiento de Audiencias</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display contorno">Redes Sociales y Contenido</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display">Entretenimiento</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display contorno">Comunicación</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display">Música</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display contorno">Crecimiento de Audiencias</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display">Redes Sociales y Contenido</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display contorno">Entretenimiento</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display">Comunicación</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+        <li class="display contorno">Música</li>
+        <li class="terminos__estrella"><img src="assets/v2/estrella.svg" alt="" width="17" height="17"></li>
+      </ul>
+      <!-- copia para que el carrusel no tenga corte; el JS la marca como decorativa -->
+    </div>
+  </div>
 
-<!-- ============================================================ PROCESO -->
-<section class="section process" id="proceso">
-  <div class="process__block">
+  <div class="nosotros__bloque">
+    <p data-entra="sube" style="--i:1" class="etiqueta etiqueta--roja nosotros__etiqueta">Nosotros</p>
 
-    <div class="process__intro" data-reveal>
-      <h2 class="h2">¿Cómo lo hacemos?</h2>
-      <p class="lede muted">Un proceso probado de tres etapas que garantiza resultados excepcionales y crecimiento sostenible para tu proyecto.</p>
+    <div class="nosotros__cuerpo">
+      <h2 class="display nosotros__declaracion">
+        <span data-entra="linea" style="--i:2" class="nosotros__frase">Te apoyamos en cada paso, <br>con soluciones adaptadas a tu ritmo.</span>
+        <span data-entra="linea" style="--i:3" class="nosotros__frase">Conectamos
+          <span class="resalte resalte--azul">talento<svg class="resalte__linea resalte__linea--escritorio trazo" data-entra="trazo" style="--i:5" width="208" height="6" viewBox="0 0 208 6.00025" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00015 5.0001C51.4491 -2.9999 125.021 11.0001 207 1.0001" stroke="#2B00FF" pathLength="1"/></svg><svg class="resalte__linea resalte__linea--movil trazo" data-entra="trazo" style="--i:5" width="89" height="6" viewBox="0 0 89.0005 6.00053" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00027 5.00026C22.3064 -2.99974 53.3778 11.0003 88.0003 1.00026" stroke="#2B00FF" pathLength="1"/></svg></span>,
+          <span class="resalte resalte--rojo">marcas<svg class="resalte__linea resalte__linea--escritorio trazo" data-entra="trazo" style="--i:6" width="216" height="6" viewBox="0 0 216 6.00024" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00014 5.0001C53.4083 -2.9999 129.837 11.0001 215 1.0001" stroke="#D51115" pathLength="1"/></svg><svg class="resalte__linea resalte__linea--movil trazo" data-entra="trazo" style="--i:6" width="88" height="4" viewBox="0 0 88.0003 4.00031" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00018 3.00013C22.0614 -0.999869 52.7757 6.00013 87.0002 1.00013" stroke="#D51115" pathLength="1"/></svg></span>
+          y <span class="resalte resalte--lima">audiencia<svg class="resalte__linea resalte__linea--escritorio trazo" data-entra="trazo" style="--i:7" width="280" height="6" viewBox="0 0 280 6.00016" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.0001 5.00006C69.0817 -2.99994 168.367 11.0001 279 1.00006" stroke="#D4D916" pathLength="1"/></svg><svg class="resalte__linea resalte__linea--movil trazo" data-entra="trazo" style="--i:7" width="121" height="4" viewBox="0 0 121 4.0002" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.00012 3.00008C30.143 -0.999919 72.643 6.00008 120 1.00008" stroke="#D4D916" pathLength="1"/></svg></span><span class="resalte__punto">.</span>
+        </span>
+      </h2>
+
+      <div class="nosotros__columnas">
+        <p data-entra="sube" style="--i:8">Una red estratégica de medios, productoras y artistas.</p>
+        <p data-entra="sube" style="--i:9">Soluciones a la medida, con visión de crecimiento a largo plazo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="servicios__bloque">
+
+    <div class="servicios__intro">
+      <div class="servicios__encabezado">
+        <p data-entra="sube" style="--i:0" class="etiqueta etiqueta--lima">Servicios</p>
+        <h2 class="titulo-doble titulo-doble--80">
+          <span data-entra="linea" style="--i:1" class="display">¿Qué</span>
+          <span data-entra="linea" style="--i:2" class="display contorno contorno--blanco">Hacemos?</span>
+        </h2>
+      </div>
+
+      <div data-entra="sube" style="--i:3" class="interruptor" role="tablist" aria-label="Tipo de servicio">
+        <button class="interruptor__opcion" type="button" role="tab" id="tab-marketing" aria-controls="panel-marketing" aria-selected="true">Marketing</button>
+        <button class="interruptor__opcion" type="button" role="tab" id="tab-consultoria" aria-controls="panel-consultoria" aria-selected="false" tabindex="-1">Consultoría</button>
+      </div>
+
     </div>
 
-    <div class="process__steps">
+    <div class="servicios__listas">
 
-      <article class="step" data-reveal>
-        <div class="step__inner">
-          <div class="step__row">
-            <span class="step__icon"><img src="assets/icons/magnifying-glass.svg" alt="" width="32" height="32"></span>
-            <span class="step__number">Paso 1</span>
-            <img class="step__line" src="assets/icons/step-line.svg" alt="" width="257" height="4">
+      <ol class="acordeon" id="panel-marketing" role="tabpanel" aria-labelledby="tab-marketing">
+        <li class="acordeon__item" data-entra="sube" style="--i:1">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-01"><span class="acordeon__num">01</span><span class="display acordeon__nombre">Crecimiento de audiencias</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-01" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Estrategias para que más gente te descubra, te siga y se quede: de oyentes casuales a fans.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Crecimiento de audiencias">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
           </div>
-          <h3 class="h3 step__title">Exploración<br>y propuesta</h3>
-          <p class="step__body">Analizamos tu proyecto, audiencia y objetivos para crear una estrategia personalizada que se adapte a tus necesidades específicas.</p>
-        </div>
-      </article>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:2">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-02"><span class="acordeon__num">02</span><span class="display acordeon__nombre">Redes sociales y contenido</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-02" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Planeación, producción y gestión de contenido para que cada red hable con la voz del proyecto.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Redes sociales y contenido">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:3">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-03"><span class="acordeon__num">03</span><span class="display acordeon__nombre">Estrategias de promoción (digital y OOH)</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-03" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Campañas en plataformas digitales y en la calle que llevan tu lanzamiento a donde está tu público.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Estrategias de promoción (digital y OOH)">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:4">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-04"><span class="acordeon__num">04</span><span class="display acordeon__nombre">Influencer marketing</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-04" hidden>
+            <div class="acordeon__contenido">
+              <div class="acordeon__texto">
+                <p>Conectamos tu música con creadores que mueven conversación y tendencias en su comunidad.</p>
+                <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Influencer marketing">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:5">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-05"><span class="acordeon__num">05</span><span class="display acordeon__nombre">Relaciones públicas</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-05" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Prensa, entrevistas y presencia en medios para contar tu historia en los espacios correctos.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Relaciones públicas">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:6">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-06"><span class="acordeon__num">06</span><span class="display acordeon__nombre">Análisis de datos y optimización</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-06" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Medimos lo que pasa en plataformas y redes para ajustar la estrategia con datos, no con corazonadas.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Análisis de datos y optimización">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:7">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-07"><span class="acordeon__num">07</span><span class="display acordeon__nombre">Dirección creativa y diseño gráfico</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-07" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Identidad visual, portadas y piezas de campaña con una sola línea creativa.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Dirección creativa y diseño gráfico">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:8">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-08"><span class="acordeon__num">08</span><span class="display acordeon__nombre">Diseño de estrategias de lanzamiento</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-08" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>El plan completo de cada lanzamiento: calendario, contenidos, pauta y metas.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Diseño de estrategias de lanzamiento">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:9">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="srv-09"><span class="acordeon__num">09</span><span class="display acordeon__nombre">Producción audiovisual</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="srv-09" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Videoclips, visualizers y contenido vertical hechos por el mismo equipo que planea la campaña.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Producción audiovisual">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+      </ol>
 
-      <article class="step" data-reveal style="--reveal-delay:120ms">
-        <div class="step__inner">
-          <div class="step__row">
-            <span class="step__icon"><img src="assets/icons/lightning.svg" alt="" width="32" height="32"></span>
-            <span class="step__number">Paso 2</span>
-            <img class="step__line" src="assets/icons/step-line.svg" alt="" width="257" height="4">
+      <ol class="acordeon" id="panel-consultoria" role="tabpanel" aria-labelledby="tab-consultoria" hidden>
+        <li class="acordeon__item" data-entra="sube" style="--i:1">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="con-01"><span class="acordeon__num">01</span><span class="display acordeon__nombre">Estructura de carrera artística</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="con-01" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Ordenamos el proyecto: equipo, metas y un plan a mediano plazo para crecer con dirección.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Estructura de carrera artística">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
           </div>
-          <h3 class="h3 step__title">Ejecución<br>y optimización</h3>
-          <p class="step__body">Implementamos las estrategias diseñadas, monitoreamos el rendimiento en tiempo real y optimizamos continuamente para maximizar resultados.</p>
-        </div>
-      </article>
-
-      <article class="step" data-reveal style="--reveal-delay:240ms">
-        <div class="step__inner">
-          <div class="step__row">
-            <span class="step__icon"><img src="assets/icons/target.svg" alt="" width="32" height="32"></span>
-            <span class="step__number">Paso 3</span>
-            <img class="step__line" src="assets/icons/step-line.svg" alt="" width="257" height="4">
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:2">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="con-02"><span class="acordeon__num">02</span><span class="display acordeon__nombre">Gestión de acuerdos comerciales</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="con-02" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Te acompañamos a negociar y revisar contratos, alianzas y acuerdos con marcas y sellos.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Gestión de acuerdos comerciales">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
           </div>
-          <h3 class="h3 step__title">Evaluación y mantenimiento</h3>
-          <p class="step__body">Medimos el impacto, generamos reportes detallados y mantenemos las estrategias para asegurar crecimiento sostenible a largo plazo.</p>
-        </div>
-      </article>
+        </li>
+        <li class="acordeon__item" data-entra="sube" style="--i:3">
+          <h3><button class="acordeon__boton" type="button" aria-expanded="false" aria-controls="con-03"><span class="acordeon__num">03</span><span class="display acordeon__nombre">Distribución musical</span><span class="acordeon__icono" aria-hidden="true"></span></button></h3>
+          <div class="acordeon__panel" id="con-03" hidden>
+            <div class="acordeon__contenido"><div class="acordeon__texto">
+              <p>Llevamos tu música a todas las plataformas, con la metadata correcta y el socio de distribución adecuado.</p>
+              <a class="cta cta--chico cta--roja" href="#contacto" data-servicio="Distribución musical">Solicitar consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></a>
+            </div></div>
+          </div>
+        </li>
+      </ol>
 
     </div>
   </div>
 </section>
 
-<div class="spacer spacer--64"></div>
+<!-- ============================================================= PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="proceso__bloque">
+    <!-- Escritorio: la línea que recorre las etapas (la traza main.js) -->
+    <svg class="proceso__linea" aria-hidden="true" focusable="false"><g class="proceso__camara"><path class="proceso__trazo" d="M0 0"/></g></svg>
 
-<!-- ================================================================ CTA -->
-<section class="section cta">
-  <div class="cta__block">
-    <div class="cta__text" data-reveal>
-      <h2 class="h2">¿Listo para crecer tu CREW?</h2>
-      <p>Solicita tu campaña ahora y comienza a transformar tu presencia en la industria del entretenimiento.</p>
-    </div>
-    <div class="cta__action" data-reveal style="--reveal-delay:120ms">
-      <a class="btn" href="#contacto">Solicitar campaña</a>
-    </div>
-  </div>
-</section>
-
-<div class="spacer spacer--64"></div>
-
-<!-- =========================================================== CLIENTES -->
-<section class="section clients" id="clientes">
-  <div class="clients__block">
-
-    <div class="clients__intro" data-reveal>
-      <p class="eyebrow">Nuestros Clientes</p>
-      <h2 class="h2">Ellos ya están en EL CREW</h2>
-    </div>
-
-    <div class="clients__grid">
-
-      <article class="client" data-reveal>
-        <div class="client__row">
-          <img class="client__avatar" src="assets/img/babilonia.png" alt="Babilonia Music" width="64" height="64" loading="lazy" decoding="async">
-        </div>
-        <div class="client__body">
-          <div class="client__head">
-            <h3 class="h3 client__name">Babilonia Music</h3>
-            <div class="client__tags">
-              <span class="badge" title="Análisis de datos"><img src="assets/icons/chart-line-alt.svg" alt="Análisis de datos" width="24" height="24"></span>
-              <span class="badge" title="Estrategia"><img src="assets/icons/lightbulb-alt.svg" alt="Estrategia" width="24" height="24"></span>
-              <span class="badge" title="Acuerdos comerciales"><img src="assets/icons/handshake-alt.svg" alt="Acuerdos comerciales" width="24" height="24"></span>
-            </div>
-          </div>
-          <div class="projects">
-            <div class="project">
-              <img src="assets/img/cartel-de-santa.png" alt="Cartel de Santa" width="64" height="64" loading="lazy" decoding="async">
-              <span>Cartel de Santa</span>
-            </div>
-            <div class="project">
-              <img src="assets/img/barbarela.png" alt="Barbarela" width="64" height="64" loading="lazy" decoding="async">
-              <span>Barbarela</span>
-            </div>
-            <div class="project">
-              <img src="assets/img/eduardo-iii-a.png" alt="Eduardo III" width="64" height="64" loading="lazy" decoding="async">
-              <span>Eduardo III</span>
-            </div>
-            <div class="project">
-              <img src="assets/img/richard-ahumada.png" alt="Richard Ahumada" width="64" height="64" loading="lazy" decoding="async">
-              <span>Richard Ahumada</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="client" data-reveal style="--reveal-delay:120ms">
-        <div class="client__row">
-          <img class="client__avatar" src="assets/img/virgin.png" alt="Virgin Music" width="64" height="64" loading="lazy" decoding="async">
-        </div>
-        <div class="client__body">
-          <div class="client__head">
-            <h3 class="h3 client__name">Virgin Music</h3>
-            <div class="client__tags">
-              <span class="badge" title="Monetización"><img src="assets/icons/currency-dollar-alt.svg" alt="Monetización" width="24" height="24"></span>
-              <span class="badge" title="Acuerdos comerciales"><img src="assets/icons/handshake-alt2.svg" alt="Acuerdos comerciales" width="24" height="24"></span>
-            </div>
-          </div>
-          <div class="projects">
-            <div class="project">
-              <img src="assets/img/neto-pena.png" alt="Neto Peña" width="64" height="64" loading="lazy" decoding="async">
-              <span>Neto Peña</span>
-            </div>
-            <div class="project">
-              <img src="assets/img/el-malilla.png" alt="El Malilla" width="64" height="64" loading="lazy" decoding="async">
-              <span>El Malilla</span>
-            </div>
-            <div class="project">
-              <img src="assets/img/dani-flow.png" alt="Dani Flow" width="64" height="64" loading="lazy" decoding="async">
-              <span>Dani Flow</span>
-            </div>
-            <div class="project">
-              <img src="assets/img/rico-o-muerto.png" alt="Rico o Muerto" width="64" height="64" loading="lazy" decoding="async">
-              <span>Rico o Muerto</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<div class="spacer spacer--64"></div>
-
-<div class="blocks" data-reveal aria-hidden="true">
-  <img src="assets/icons/block-1.svg" alt="" width="110" height="104" loading="lazy">
-  <img src="assets/icons/block-2.svg" alt="" width="110" height="104" loading="lazy">
-  <img src="assets/icons/block-3.svg" alt="" width="110" height="104" loading="lazy">
-</div>
-
-<!-- =========================================================== CONTACTO -->
-<section class="contact" id="contacto">
-  <div class="contact__block">
-
-    <div class="contact__intro" data-reveal>
-      <h2 class="h2">Hablemos<br>de tu proyecto</h2>
-
-      <div class="contact__list">
-        <a class="contact__item" href="mailto:management@somoselcrew.com">
-          <span class="badge badge--plain"><img src="assets/icons/envelope.svg" alt="" width="24" height="24"></span>
-          <span class="contact__item-text">management@somoselcrew.com</span>
-        </a>
-        <div class="contact__item">
-          <span class="badge badge--plain"><img src="assets/icons/map-pin.svg" alt="" width="24" height="24"></span>
-          <span class="contact__item-text">Ciudad de México, México<br>Servicio en toda LATAM</span>
-        </div>
+    <div class="proceso__intro">
+      <p data-entra="sube" style="--i:0" class="etiqueta etiqueta--lima">Proceso</p>
+      <div class="proceso__descripcion">
+        <h2 class="titulo-doble titulo-doble--80">
+          <span data-entra="linea" style="--i:1" class="display">De la idea</span>
+          <span data-entra="linea" style="--i:2" class="display contorno contorno--blanco">Al Crecimiento</span>
+        </h2>
+        <p data-entra="sube" style="--i:3" class="proceso__bajada">En 3 etapas.</p>
       </div>
     </div>
 
-    <div class="contact__form-wrap" data-reveal style="--reveal-delay:120ms">
-      <form class="form" id="contact-form" name="contacto" method="POST"
-            data-netlify="true" netlify-honeypot="bot-field">
-
-        <input type="hidden" name="form-name" value="contacto">
-        <p class="visually-hidden">
-          <label>No llenar este campo: <input name="bot-field"></label>
-        </p>
-
-        <div class="form__head">
-          <strong>Envíanos un mensaje</strong>
-          <span>Completa el formulario y nos pondremos en contacto.</span>
+    <div class="proceso__recorrido">
+      <div class="proceso__via" aria-hidden="true">
+        <div class="proceso__curva">
+          <img class="proceso__curva-img proceso__curva-img--movil" src="assets/v2/proceso-curva-movil.svg" alt="" width="551" height="84">
         </div>
+        <span class="proceso__punto proceso__punto--1">
+          <img class="proceso__punto-off--movil" src="assets/v2/proceso-punto-movil.svg" alt="" width="32" height="32">
+          <img class="proceso__punto-on--movil" src="assets/v2/proceso-punto-activo-movil.svg" alt="" width="28" height="28">
+          <img class="proceso__punto-on--escritorio" src="assets/v2/proceso-punto-activo.svg" alt="" width="24" height="24">
+        </span>
+        <span class="proceso__punto proceso__punto--2">
+          <img class="proceso__punto-off--movil" src="assets/v2/proceso-punto-movil.svg" alt="" width="32" height="32">
+          <img class="proceso__punto-on--movil" src="assets/v2/proceso-punto-activo-movil.svg" alt="" width="28" height="28">
+          <img class="proceso__punto-on--escritorio" src="assets/v2/proceso-punto-activo.svg" alt="" width="24" height="24">
+        </span>
+        <span class="proceso__punto proceso__punto--3">
+          <img class="proceso__punto-off--movil" src="assets/v2/proceso-punto-movil.svg" alt="" width="32" height="32">
+          <img class="proceso__punto-on--movil" src="assets/v2/proceso-punto-activo-movil.svg" alt="" width="28" height="28">
+          <img class="proceso__punto-on--escritorio" src="assets/v2/proceso-punto-activo.svg" alt="" width="24" height="24">
+        </span>
+      </div>
 
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="ej. John Doe" required autocomplete="name">
-        </div>
-
-        <div class="field">
-          <label for="email">Correo electrónico</label>
-          <input id="email" name="email" type="email" placeholder="ej. mail@example.com" required autocomplete="email">
-        </div>
-
-        <div class="field">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
-        </div>
-
-        <button class="btn btn--dark" type="submit">Enviar mensaje</button>
-        <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
-      </form>
+      <ol class="proceso__etapas">
+        <li class="etapa">
+          <p class="etapa__num">Etapa 01</p>
+          <h3 class="display etapa__titulo">Exploración y Propuesta</h3>
+          <p class="etapa__texto">Identificamos tus necesidades y creamos un plan a tu medida.</p>
+        </li>
+        <li class="etapa">
+          <p class="etapa__num">Etapa 02</p>
+          <h3 class="display etapa__titulo">Ejecución y optimización</h3>
+          <p class="etapa__texto">Implementamos la estrategia y la ajustamos para obtener los mejores resultados.</p>
+        </li>
+        <li class="etapa">
+          <p class="etapa__num">Etapa 03</p>
+          <h3 class="display etapa__titulo">Evaluación y mantenimiento</h3>
+          <p class="etapa__texto">Analizamos el impacto y planificamos los siguientes pasos para el éxito continuo.</p>
+        </li>
+      </ol>
     </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ CLIENTES -->
+<section class="clientes" id="clientes">
+  <div class="clientes__bloque">
+
+    <div class="clientes__encabezado">
+      <p data-entra="sube" style="--i:0" class="etiqueta">Clientes</p>
+      <h2 class="clientes__titulo">
+        <span data-entra="linea" style="--i:1" class="display contorno contorno--blanco">Vibe</span>
+        <span data-entra="linea" style="--i:2" class="display">With US</span>
+      </h2>
+      <p data-entra="sube" style="--i:3" class="clientes__bajada">Ellos ya están con EL Crew.</p>
+      <svg class="clientes__squiggle trazo" data-entra="trazo" style="--i:4" width="295" height="30" viewBox="0 0 295 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1.93443 26C19.3443 26 30.9508 20 33.8525 11C35.7869 4 27.082 3 25.1475 10C23.2131 18 33.8525 26 50.2951 26C67.7049 26 79.3115 20 82.2131 11C84.1475 4 75.4426 3 73.5082 10C71.5738 18 82.2131 26 98.6557 26C116.066 26 127.672 20 130.574 11C132.508 4 123.803 3 121.869 10C119.934 18 130.574 26 147.016 26C164.426 26 176.033 20 178.934 11C180.869 4 172.164 3 170.229 10C168.295 18 178.934 26 195.377 26C212.787 26 224.393 20 227.295 11C229.229 4 220.525 3 218.59 10C216.656 18 227.295 26 243.738 26C261.148 26 272.754 20 275.656 11C277.59 4 268.885 3 266.951 10C265.016 18 275.656 26 292.098 26" stroke="#D4D916" pathLength="1"/></svg>
+    </div>
+
+    <!-- Escritorio: dos filas con marquesina; al pasar el cursor aparece la foto.
+         data-sello une a cada artista con su disquera: al pasar por uno se
+         resalta el otro. -->
+    <div class="clientes__filas">
+      <div data-entra="derecha" style="--i:5" class="fila-clientes">
+        <img class="fila-clientes__linea fila-clientes__linea--arriba" src="assets/v2/linea-horizontal.svg" alt="" width="1472" height="1">
+        <div class="fila-clientes__rotulo">
+          <img src="assets/v2/icon-artistas.svg" alt="" width="40" height="40">
+          <h3 class="display">Artistas</h3>
+        </div>
+        <img class="fila-clientes__divisor" src="assets/v2/linea-vertical.svg" alt="" width="1" height="273">
+        <div class="fila-clientes__ventana">
+          <ul class="fila-clientes__pista" data-marquesina>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/cartel-de-santa.png" data-sello="babilonia">Cartel de Santa</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/neto-pena.png" data-sello="virgin">Neto Peña</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/barbarela.png" data-sello="babilonia">Barbarela</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/el-malilla.png" data-sello="virgin">El Malilla</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/v2/cliente-eduardo-iii.webp" data-sello="babilonia">Eduardo III</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/dani-flow.png" data-sello="virgin">Dani Flow</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/richard-ahumada.png" data-sello="babilonia">Richard Ahumada</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/rico-o-muerto.png" data-sello="virgin">Rico o Muerto</span></li>
+          </ul>
+        </div>
+        <img class="fila-clientes__linea fila-clientes__linea--abajo" src="assets/v2/linea-horizontal.svg" alt="" width="1472" height="1">
+      </div>
+
+      <div data-entra="derecha" style="--i:5" class="fila-clientes">
+        <div class="fila-clientes__rotulo">
+          <img src="assets/v2/icon-sellos.svg" alt="" width="40" height="40">
+          <h3 class="display">Sellos y marcas</h3>
+        </div>
+        <img class="fila-clientes__divisor" src="assets/v2/linea-vertical.svg" alt="" width="1" height="273">
+        <div class="fila-clientes__ventana">
+          <ul class="fila-clientes__pista">
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/virgin.png" data-sello="virgin">Virgin Music</span></li>
+            <li><span class="display nombre-cliente" tabindex="0" data-foto="assets/img/babilonia.png" data-sello="babilonia">Babilonia Music</span></li>
+          </ul>
+        </div>
+        <img class="fila-clientes__linea fila-clientes__linea--abajo" src="assets/v2/linea-horizontal.svg" alt="" width="1472" height="1">
+      </div>
+
+      <img class="clientes__foto" alt="" width="256" height="256" hidden>
+    </div>
+
+    <!-- Móvil: lista filtrable -->
+    <div class="clientes__lista">
+      <div data-entra="sube" style="--i:4" class="interruptor interruptor--rojo" role="group" aria-label="Filtrar clientes">
+        <button class="interruptor__opcion" type="button" data-filtro="todo" aria-pressed="true">Todo <span class="interruptor__cuenta">10</span></button>
+        <button class="interruptor__opcion" type="button" data-filtro="artista" aria-pressed="false">Artistas <span class="interruptor__cuenta">08</span></button>
+        <button class="interruptor__opcion" type="button" data-filtro="marca" aria-pressed="false">Marcas <span class="interruptor__cuenta">02</span></button>
+      </div>
+
+      <ul class="tarjetas-cliente">
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:0" data-tipo="artista"><img src="assets/img/cartel-de-santa.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Cartel de Santa</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:1" data-tipo="artista"><img src="assets/img/barbarela.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Barbarela</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:2" data-tipo="artista"><img src="assets/v2/cliente-eduardo-iii.webp" alt="" width="80" height="80" loading="lazy"><div><p class="display">Eduardo III</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:3" data-tipo="artista"><img src="assets/img/richard-ahumada.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Richard Ahumada</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:0" data-tipo="artista"><img src="assets/img/neto-pena.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Neto Peña</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:1" data-tipo="artista"><img src="assets/img/el-malilla.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">El Malilla</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:2" data-tipo="artista"><img src="assets/img/dani-flow.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Dani Flow</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:3" data-tipo="artista"><img src="assets/img/rico-o-muerto.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Rico o Muerto</p><p>Artista</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:0" data-tipo="marca"><img src="assets/img/virgin.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Virgin Music</p><p>Sello</p></div></li>
+        <li class="tarjeta-cliente" data-entra="sube" style="--i:1" data-tipo="marca"><img src="assets/img/babilonia.png" alt="" width="80" height="80" loading="lazy"><div><p class="display">Babilonia Music</p><p>Sello</p></div></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto__bloque">
+
+    <div class="contacto__intro">
+      <div class="contacto__encabezado">
+        <p data-entra="sube" style="--i:0" class="etiqueta etiqueta--roja">Contacto</p>
+        <h2 class="titulo-doble titulo-doble--128">
+          <span data-entra="linea" style="--i:1" class="display">¿Algo</span>
+          <span data-entra="linea" style="--i:2" class="display contorno">Bien?</span>
+        </h2>
+        <p data-entra="sube" style="--i:3" class="contacto__bajada">Cuéntanos de tu proyecto y armamos la estrategia contigo.</p>
+      </div>
+      <a data-entra="sube" style="--i:4" class="display contacto__correo" href="mailto:management@somoselcrew.com">management@somoselcrew.com</a>
+      <ul data-entra="sube" style="--i:5" class="contacto__datos">
+        <li><img src="assets/v2/icon-map-pin.svg" alt="" width="24" height="24">Ciudad de México, México</li>
+        <li><img src="assets/v2/icon-instagram.svg" alt="" width="24" height="24"><a class="enlace-externo" href="https://www.instagram.com/somoselcrew" target="_blank" rel="noopener noreferrer">@somoselcrew<span class="visualmente-oculto"> en Instagram (se abre en otra pestaña)</span><img class="enlace-externo__icono" src="assets/v2/flecha-externa.svg" alt="" width="16" height="12"></a></li>
+      </ul>
+    </div>
+
+    <form class="formulario" id="formulario" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contacto">
+      <input type="hidden" name="servicio" id="campo-servicio" value="">
+      <input type="hidden" name="redes" id="campo-redes" value="">
+      <p class="visualmente-oculto"><label>No llenar este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <fieldset data-entra="sube" style="--i:1" class="formulario__grupo">
+        <legend class="formulario__etiqueta">Soy</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="rol" value="Artista"><span class="chip__radio" aria-hidden="true"></span><span class="display">Artista</span></label>
+          <label class="chip"><input type="radio" name="rol" value="Manager"><span class="chip__radio" aria-hidden="true"></span><span class="display">Manager</span></label>
+          <label class="chip"><input type="radio" name="rol" value="Sello"><span class="chip__radio" aria-hidden="true"></span><span class="display">Sello</span></label>
+          <label class="chip"><input type="radio" name="rol" value="Otro"><span class="chip__radio" aria-hidden="true"></span><span class="display">Otro</span></label>
+        </div>
+      </fieldset>
+
+      <div class="campo" data-entra="sube" style="--i:2">
+        <label class="formulario__etiqueta" for="nombre">Nombre</label>
+        <input class="campo__entrada" id="nombre" name="nombre" type="text" placeholder="Tu nombre o el de tu proyecto" autocomplete="name" required>
+      </div>
+
+      <div class="campo" data-entra="sube" style="--i:3">
+        <label class="formulario__etiqueta" for="correo">Correo</label>
+        <input class="campo__entrada" id="correo" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required>
+      </div>
+
+      <fieldset data-entra="sube" style="--i:4" class="formulario__grupo redes">
+        <legend class="formulario__etiqueta">Redes sociales</legend>
+        <!-- Las cinco filas existen en el HTML (Netlify registra sus campos) pero
+             empiezan ocultas: «Agregar» las muestra en este orden. -->
+        <ul class="redes__lista" id="redes-lista">
+          <li class="red" hidden data-fija data-red="Instagram">
+            <span class="red__icono"><img src="assets/v2/icon-instagram.svg" alt="" width="24" height="24"></span>
+            <input class="red__entrada" name="red_instagram" type="text" placeholder="@" aria-label="Instagram" autocomplete="off">
+            <button class="red__quitar" type="button" aria-label="Quitar Instagram"><img src="assets/v2/icon-basura.svg" alt="" width="24" height="24"></button>
+          </li>
+          <li class="red" hidden data-fija data-red="Facebook">
+            <span class="red__icono"><img src="assets/v2/icon-facebook.svg" alt="" width="24" height="24"></span>
+            <input class="red__entrada" name="red_facebook" type="text" placeholder="/" aria-label="Facebook" autocomplete="off">
+            <button class="red__quitar" type="button" aria-label="Quitar Facebook"><img src="assets/v2/icon-basura.svg" alt="" width="24" height="24"></button>
+          </li>
+          <li class="red" hidden data-fija data-red="X">
+            <span class="red__icono"><img src="assets/v2/icon-x.svg" alt="" width="24" height="24"></span>
+            <input class="red__entrada" name="red_x" type="text" placeholder="/" aria-label="X" autocomplete="off">
+            <button class="red__quitar" type="button" aria-label="Quitar X"><img src="assets/v2/icon-basura.svg" alt="" width="24" height="24"></button>
+          </li>
+          <li class="red" hidden data-fija data-red="YouTube">
+            <span class="red__icono"><img src="assets/v2/icon-youtube.svg" alt="" width="24" height="24"></span>
+            <input class="red__entrada" name="red_youtube" type="text" placeholder="/" aria-label="YouTube" autocomplete="off">
+            <button class="red__quitar" type="button" aria-label="Quitar YouTube"><img src="assets/v2/icon-basura.svg" alt="" width="24" height="24"></button>
+          </li>
+          <li class="red" hidden data-fija data-red="Otra">
+            <span class="red__icono red__icono--texto">Otra</span>
+            <input class="red__entrada" name="red_otra" type="text" placeholder="www." aria-label="Otra red o sitio web" autocomplete="off">
+            <button class="red__quitar" type="button" aria-label="Quitar otra red"><img src="assets/v2/icon-basura.svg" alt="" width="24" height="24"></button>
+          </li>
+        </ul>
+        <div class="redes__acciones">
+          <button class="cta redes__agregar" type="button" id="redes-agregar" aria-controls="redes-lista">Agregar <svg class="icono-mas" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path d="M13 3.33333C13 2.96514 12.5523 2.66667 12 2.66667C11.4477 2.66667 11 2.96514 11 3.33333V7.33333H5C4.44772 7.33333 4 7.63181 4 8C4 8.36819 4.44772 8.66667 5 8.66667H11V12.6667C11 13.0349 11.4477 13.3333 12 13.3333C12.5523 13.3333 13 13.0349 13 12.6667V8.66667H19C19.5523 8.66667 20 8.36819 20 8C20 7.63181 19.5523 7.33333 19 7.33333H13V3.33333Z"/></svg></button>
+        </div>
+      </fieldset>
+
+      <div class="campo" data-entra="sube" style="--i:5">
+        <label class="formulario__etiqueta" for="proyecto">Tu proyecto</label>
+        <textarea class="campo__entrada campo__entrada--area" id="proyecto" name="proyecto" placeholder="Platícanos de tu proyecto" required></textarea>
+      </div>
+
+      <button data-entra="sube" style="--i:6" class="cta formulario__enviar" type="submit">Solicitar Consulta <svg class="flecha" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><path class="flecha__cola" d="M1.2 9.2C7.2 4.4 14.4 11.6 21.6 6.8"/><path d="M16.8 2.6L22.2 6.8L17.4 11.6"/></svg></button>
+      <p class="formulario__estado" id="formulario-estado" role="status" aria-live="polite"></p>
+    </form>
 
   </div>
 </section>
 
 </main>
 
-<!-- ============================================================= FOOTER -->
-<footer class="footer">
-  <div class="footer__block">
-    <div class="footer__content">
-      <a href="#top" aria-label="EL CREW — inicio">
-        <img class="footer__logo" src="assets/icons/logo-footer.svg" alt="EL CREW — Vibe With Us" width="281" height="22">
-      </a>
-      <nav class="footer__nav" aria-label="Navegación del pie">
-        <a href="#top">Home</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Services</a>
-      </nav>
-    </div>
-  </div>
-
-  <img class="footer__rule" src="assets/icons/footer-rule.svg" alt="" width="1440" height="1">
-
-  <div class="footer__bar">
-    <div class="footer__bar-inner">
-      <p>© <span id="year">2026</span> El CREW. Todos los derechos reservados.</p>
+<!-- ================================================================= PIE -->
+<footer class="pie">
+  <div class="pie__bloque">
+    <nav data-entra="sube" style="--i:0" class="pie__nav" aria-label="Pie de página">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#clientes">Clientes</a>
+    </nav>
+    <p data-entra="sube" style="--i:1" class="pie__legal">© <span id="anio">2026</span> El Crew · Ciudad de México</p>
+    <div data-entra="logo" style="--i:2" class="pie__marca" aria-hidden="true">
+      <img class="pie__logo pie__logo--escritorio" src="assets/v2/logo-pie.svg" alt="" width="1344" height="815">
+      <img class="pie__logo pie__logo--movil" src="assets/v2/logo-pie-movil.svg" alt="" width="294" height="178">
     </div>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=14" defer></script>
 </body>
 </html>
