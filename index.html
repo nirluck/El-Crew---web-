@@ -3,25 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EL CREW — Tu talento, amplificado | Marketing digital para artistas y la industria musical</title>
-<meta name="description" content="Marketing digital para artistas y la industria musical: crecimiento de audiencias, redes y contenido, lanzamientos, influencers y promoción. LATAM, Iberoamérica y US Latin.">
+<title>EL CREW | Marketing digital para artistas musicales</title>
+<meta name="description" content="Marketing digital para artistas y la industria musical: crecimiento de audiencias, contenido, lanzamientos e influencers en LATAM, Iberoamérica y US Latin.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#2b00ff">
 <link rel="canonical" href="https://somoselcrew.com/">
 
+<!-- Al compartir el enlace (Open Graph; X usa las de twitter:) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EL CREW">
-<meta property="og:title" content="EL CREW — Tu talento, amplificado">
-<meta property="og:description" content="Marketing digital para artistas y la industria musical en LATAM, Iberoamérica y US Latin.">
-<meta property="og:url" content="https://somoselcrew.com/">
 <meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://somoselcrew.com/">
+<meta property="og:title" content="EL CREW — Tu talento, amplificado">
+<meta property="og:description" content="Estrategia, contenido y promoción para que tu música llegue más lejos. Marketing digital para artistas y sellos en LATAM, Iberoamérica y US Latin.">
 <meta property="og:image" content="https://somoselcrew.com/assets/v2/og-el-crew.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="EL CREW — Tu talento, amplificado. Marketing digital para artistas en LATAM, Iberoamérica y US Latin.">
+<meta property="og:image:alt" content="«Tu talento amplificado», de EL CREW, junto a Budy, la bocina de la marca, y los territorios LATAM, Iberoamérica y US Latin.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EL CREW — Tu talento, amplificado">
+<meta name="twitter:description" content="Estrategia, contenido y promoción para que tu música llegue más lejos. Marketing digital para artistas y sellos en LATAM, Iberoamérica y US Latin.">
 <meta name="twitter:image" content="https://somoselcrew.com/assets/v2/og-el-crew.jpg">
+<meta name="twitter:image:alt" content="«Tu talento amplificado», de EL CREW, junto a Budy, la bocina de la marca, y los territorios LATAM, Iberoamérica y US Latin.">
 
-<link rel="icon" href="assets/v2/logo-nav.svg" type="image/svg+xml">
+<link rel="icon" href="assets/v2/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/v2/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="assets/v2/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,18 +41,42 @@
   document.documentElement.classList.add("js");
   setTimeout(function () { if (!window.elCrewListo) document.documentElement.classList.remove("js"); }, 3000);
 </script>
-<link rel="stylesheet" href="css/styles.css?v=14">
+<link rel="stylesheet" href="css/styles.css?v=15">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "EL CREW",
-  "slogan": "Vibe with us",
-  "url": "https://somoselcrew.com/",
-  "email": "management@somoselcrew.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX" },
-  "sameAs": ["https://www.instagram.com/somoselcrew"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://somoselcrew.com/#organizacion",
+      "name": "EL CREW",
+      "alternateName": "El Crew",
+      "slogan": "Vibe with us",
+      "description": "Agencia de marketing digital para artistas, sellos y la industria musical en LATAM, Iberoamérica y US Latin.",
+      "url": "https://somoselcrew.com/",
+      "logo": { "@type": "ImageObject", "url": "https://somoselcrew.com/assets/v2/logo-el-crew-512.png", "width": 512, "height": 512 },
+      "image": "https://somoselcrew.com/assets/v2/og-el-crew.jpg",
+      "email": "management@somoselcrew.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX" },
+      "areaServed": ["Latinoamérica", "Iberoamérica", "Estados Unidos"],
+      "knowsAbout": [
+        "Marketing digital para artistas", "Crecimiento de audiencias", "Redes sociales y contenido",
+        "Estrategias de promoción", "Influencer marketing", "Relaciones públicas",
+        "Análisis de datos", "Dirección creativa", "Estrategias de lanzamiento",
+        "Producción audiovisual", "Carrera artística", "Distribución musical"
+      ],
+      "sameAs": ["https://www.instagram.com/somoselcrew"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://somoselcrew.com/#sitio",
+      "url": "https://somoselcrew.com/",
+      "name": "EL CREW",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://somoselcrew.com/#organizacion" }
+    }
+  ]
 }
 </script>
 </head>
@@ -125,7 +157,8 @@
       </div>
     </div>
 
-    <div class="hero__arte" aria-hidden="true">
+    <!-- El arte es decorativo, salvo los territorios, que sí se leen -->
+    <div class="hero__arte">
       <img data-entra="cortina" style="--i:1" class="hero__paralelogramo" src="assets/v2/paralelogramo-azul.svg" alt="" width="427" height="516">
 
       <!-- Budy camina y silba (SVG animado con CSS); con movimiento reducido, la pose del Figma -->
@@ -135,7 +168,7 @@
       </picture>
 
       <!-- Insignia «Vibe with us» como vinilo: el disco gira, el reflejo no -->
-      <div class="insignia" data-entra="vinilo" style="--i:6">
+      <div class="insignia" data-entra="vinilo" style="--i:6" aria-hidden="true">
         <div class="insignia__giro">
           <svg class="insignia__disco" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
             <defs>
@@ -610,6 +643,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=14" defer></script>
+<script src="js/main.js?v=15" defer></script>
 </body>
 </html>

@@ -203,6 +203,29 @@ no carga.
   «Otra». El bote de basura oculta (y vacía) las cinco fijas y elimina las
   agregadas.
 
+## SEO y etiquetas
+
+- **Título** (51 caracteres) y **descripción** (155) dentro de lo que Google
+  muestra completo. Canónica `https://somoselcrew.com/` (el `www` ya
+  redirige ahí en Netlify) y `robots` con `max-image-preview:large`.
+- **Al compartir**: Open Graph y X completos (título «EL CREW — Tu talento,
+  amplificado», descripción, imagen de 1200 × 630 con su texto
+  alternativo). La imagen es `assets/v2/og-el-crew.jpg`, una captura del
+  hero que genera `.tools/titular.sh`; si cambia el hero, se regenera **con
+  otro nombre** (ver «Caché») y se actualizan las cuatro etiquetas que la
+  usan.
+- **Íconos**: `favicon.svg` (logo blanco sobre el azul de la marca, se ve en
+  pestañas claras y oscuras), `favicon-48.png` de respaldo y
+  `apple-touch-icon.png` de 180. Se generan con `.tools/iconos.sh`.
+- **Datos estructurados** (JSON-LD): `Organization` (logo de 512, correo,
+  Ciudad de México, territorios, servicios, Instagram) y `WebSite`, para el
+  nombre del sitio en los resultados.
+- **Etiquetado**: un solo `h1`, un `h2` por sección y `h3` en servicios,
+  etapas y filas de clientes; todas las imágenes con `alt` (vacío en las
+  decorativas); el arte del hero es decorativo salvo los territorios, que sí
+  se leen. Prueba: `.tools/seo.sh`.
+- `sitemap.xml`: actualizar `lastmod` al publicar cambios de contenido.
+
 ## Formulario (Netlify Forms)
 
 Se conserva el nombre `contacto`, así que los envíos siguen llegando al mismo
@@ -243,7 +266,8 @@ súbelo cuando cambien.
   quitó la de Influencer marketing para que todos sean iguales).
 - **Fotos de clientes**: el retrato del hover mide 80 px y las de
   `assets/img/` son de 192 px, suficiente aun en pantallas retina.
-- **Versión en inglés** para activar el selector de idioma.
+- **Versión en inglés** para activar el selector de idioma (cuando exista,
+  agregar `hreflang` es/en en el `<head>`).
 
 ## Pendiente de validar con diseño
 
