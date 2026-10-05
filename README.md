@@ -127,7 +127,10 @@ no carga.
   menor (`19.8cqi`, calculado para «AMPLIFICADO»; si cambia el texto, medir
   con `.tools/titular.sh`). La segunda línea se estira a lo ancho, con su
   subrayado, en la primera mitad del hero al hacer scroll (hasta +35 %, o lo
-  que quepa en la columna).
+  que quepa en la columna). «Tu talento» lleva el degradado del Figma
+  (página «para claude», `2129:11557`): azul sólido, un radial azul → morado
+  → rosa desde la esquina inferior izquierda y encima un lineal de
+  transparente a amarillo, recortados al texto.
 - **Botones principales** («Solicitar Campaña», «Contáctanos», «Solicitar
   Consulta», «Agregar»): rojo de la marca en hover. La flecha avanza y su
   cola ondula como si nadara (animación de la propiedad `d`; en Safari sólo
@@ -188,6 +191,11 @@ no carga.
   (25 %); el retrato circular de 80 px («Desktop client name / Hover» del
   sistema de diseño) aparece donde el cursor toca el nombre y lo sigue con
   inercia. Con el teclado aparece sobre el nombre enfocado.
+- **Marquesina arrastrable**: con clic sostenido (o el dedo en tableta) se
+  lleva a un lado o al otro para buscar un nombre, y al soltar sigue un poco
+  por inercia; también con el deslizamiento horizontal del trackpad. Mueve
+  el tiempo de la animación, así que el bucle no se corta. Mientras se
+  arrastra no aparece el retrato.
 - **Artistas y disqueras** (`data-sello` en cada nombre): al pasar por un
   artista también se pone amarilla su disquera; al pasar por una disquera
   se ponen amarillos sus artistas que estén a la vista y la marquesina de
@@ -210,7 +218,7 @@ no carga.
   redirige ahí en Netlify) y `robots` con `max-image-preview:large`.
 - **Al compartir**: Open Graph y X completos (título «EL CREW — Tu talento,
   amplificado», descripción, imagen de 1200 × 630 con su texto
-  alternativo). La imagen es `assets/v2/og-el-crew.jpg`, una captura del
+  alternativo). La imagen es `assets/v2/og-el-crew-2.jpg`, una captura del
   hero que genera `.tools/titular.sh`; si cambia el hero, se regenera **con
   otro nombre** (ver «Caché») y se actualizan las cuatro etiquetas que la
   usan.
@@ -270,6 +278,10 @@ súbelo cuando cambien.
   agregar `hreflang` es/en en el `<head>`).
 
 ## Pendiente de validar con diseño
+
+- **Degradado de «Tu talento»**: termina en amarillo sobre fondo blanco;
+  las últimas letras («…NTO») quedan con poco contraste (menos de 3:1). Se
+  dejó como en el Figma.
 
 - **Lima sobre el rojo del proceso**: «Proceso» y «Etapa 01» en lima sobre
   #c30041 dan un contraste de 4.0:1 (el mínimo AA para texto de 18 px es

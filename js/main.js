@@ -918,9 +918,10 @@
       });
     };
 
+    var arrastrando = false;
     var mostrarFoto = function (nombre, x, y) {
       var src = nombre.getAttribute("data-foto");
-      if (!escritorio.matches) return;
+      if (!escritorio.matches || arrastrando) return;
       clearTimeout(salida);
       var aparece = !activo;
       if (activo && activo !== nombre) activo.classList.remove("activo");
@@ -997,6 +998,74 @@
       fila.addEventListener("pointerleave", function () { frenar(false); });
       fila.addEventListener("focusin", function () { frenar(true); });
       fila.addEventListener("focusout", function (e) { if (!fila.contains(e.relatedTarget)) frenar(false); });
+    });
+
+    /* Arrastrar la marquesina: con clic sostenido (o el dedo) se lleva a un
+       lado o al otro para buscar un nombre, y al soltar sigue un poco por
+       inercia. También con el deslizamiento horizontal del trackpad. Mueve
+       el tiempo de la animación CSS, así que no corta el bucle. */
+    $$("[data-marquesina]", filas).forEach(function (lista) {
+      var ventana = lista.parentNode;
+      var animDe = function () { return lista.getAnimations && lista.getAnimations()[0]; };
+      var correr = function (dx) {
+        var anim = animDe(), mitad = lista.offsetWidth / 2;
+        if (!anim || !mitad) return;
+        var dur = anim.effect.getComputedTiming().duration;
+        var t = ((anim.currentTime || 0) - dx / mitad * dur) % dur;
+        anim.currentTime = t < 0 ? t + dur : t;
+      };
+      var toma = null, inercia = 0;
+
+      ventana.addEventListener("pointerdown", function (e) {
+        if (e.button !== 0) return;
+        cancelAnimationFrame(inercia);
+        toma = { id: e.pointerId, x: e.clientX, ultimo: e.clientX, t: performance.now(), v: 0, movio: false };
+      });
+      ventana.addEventListener("pointermove", function (e) {
+        if (!toma || e.pointerId !== toma.id) return;
+        var dx = e.clientX - toma.ultimo, ahora = performance.now();
+        if (!toma.movio) {
+          if (Math.abs(e.clientX - toma.x) < 5) return;    // un clic no es un arrastre
+          toma.movio = true;
+          arrastrando = true;
+          ocultarFoto();
+          filas.classList.add("arrastrando");
+          try { ventana.setPointerCapture(e.pointerId); } catch (err) { /* sin captura */ }
+        }
+        correr(dx);
+        var dt = Math.max(ahora - toma.t, 1);
+        toma.v = toma.v * .7 + (dx / dt) * .3;              // px por ms, suavizada
+        toma.ultimo = e.clientX;
+        toma.t = ahora;
+      });
+      var soltar = function (e) {
+        if (!toma || (e && e.pointerId !== toma.id)) return;
+        var v = toma.movio ? toma.v : 0;
+        toma = null;
+        arrastrando = false;
+        filas.classList.remove("arrastrando");
+        if (reducir.matches || Math.abs(v) < .05) return;
+        var antes = performance.now();
+        var seguir = function (t) {
+          var dt = t - antes;
+          antes = t;
+          correr(v * dt);
+          v *= Math.pow(.94, dt / 16);
+          if (Math.abs(v) > .02) inercia = requestAnimationFrame(seguir);
+        };
+        inercia = requestAnimationFrame(seguir);
+      };
+      ventana.addEventListener("pointerup", soltar);
+      ventana.addEventListener("pointercancel", soltar);
+      ventana.addEventListener("lostpointercapture", soltar);
+      // el arrastre no selecciona texto ni arrastra imágenes
+      ventana.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
+      ventana.addEventListener("wheel", function (e) {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        e.preventDefault();                                  // sin «atrás» del navegador
+        correr(-e.deltaX);
+      }, { passive: false });
     });
 
     // Precarga discreta para que la foto aparezca sin parpadeo.
