@@ -330,6 +330,18 @@
     });
   });
 
+  /* Todas las marquesinas van a la misma velocidad (80 px/s), sean cortas o
+     largas: la duración de la animación sale del ancho de cada una. */
+  var ritmoMarquesinas = function () {
+    $$("[data-marquesina]").forEach(function (lista) {
+      var mitad = lista.offsetWidth / 2;
+      if (mitad) lista.style.animationDuration = (mitad / 80).toFixed(1) + "s";
+    });
+  };
+  ritmoMarquesinas();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ritmoMarquesinas);
+  window.addEventListener("resize", ritmoMarquesinas);
+
   /* ------------------------------------- Nosotros: subrayados que ondulan
      Cada subrayado es una onda senoidal que corre a lo largo del trazo, con
      los extremos casi quietos (como una cuerda). En reposo ondula despacio;
@@ -652,7 +664,8 @@
   var trazo = $(".proceso__trazo");
   var tituloProceso = $(".proceso .titulo-doble > :first-child");
   // fondo por estado: inicio, etapa 1, etapa 2, etapa 3, salida (arriba / abajo)
-  var COLORES = [["#c30041", "#b10058"], ["#c30041", "#b10058"], ["#81008d", "#6f00a4"], ["#4400d4", "#3100ec"], ["#4400d4", "#3100ec"]];
+  // del rojo al rosa y del rosa al azul de la marca (arriba / abajo de la pantalla)
+  var COLORES = [["#d51115", "#da2133"], ["#d51115", "#da2133"], ["#ea528d", "#c442a4"], ["#3e08f4", "#2b00ff"], ["#3e08f4", "#2b00ff"]];
   var ALTURA_PUNTO = [.503, .503, .677];       // dónde se estaciona cada punto (fracción de la pantalla)
   var geo = null;                               // geometría de la línea para el tamaño actual
   var fActual = null, persiguiendo = false, ultimoCuadro = 0, llegada = 0;
@@ -918,6 +931,44 @@
       });
     };
 
+    /* Desliza una marquesina dx px en «ms» (moviendo el tiempo de su
+       animación, así que el bucle no se corta). */
+    var deslizar = function (lista, dx, ms) {
+      var anim = lista.getAnimations && lista.getAnimations()[0], mitad = lista.offsetWidth / 2;
+      if (!anim || !mitad) return;
+      var dur = anim.effect.getComputedTiming().duration;
+      var desde = anim.currentTime || 0, total = -dx / mitad * dur, t0 = null;
+      cancelAnimationFrame(lista._desliza);
+      var paso = function (t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min((t - t0) / ms, 1);
+        var e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        var v = (desde + total * e) % dur;
+        anim.currentTime = v < 0 ? v + dur : v;
+        if (p < 1) lista._desliza = requestAnimationFrame(paso);
+      };
+      lista._desliza = requestAnimationFrame(paso);
+    };
+
+    /* Si lo que se resalta en la otra fila (el sello de un artista, o los
+       artistas de un sello) no está a la vista, esa fila se desliza hasta
+       dejar el más cercano al centro. */
+    var traerRelacionado = function (nombre) {
+      if (reducir.matches) return;
+      var fila = nombre.closest(".fila-clientes");
+      var otra = $$(".fila-clientes", filas).filter(function (f) { return f !== fila; })[0];
+      var lista = otra && $("[data-marquesina]", otra);
+      var rel = otra ? $$(".nombre-cliente.relacionado", otra) : [];
+      if (!lista || !rel.length) return;
+      var v = lista.parentNode.getBoundingClientRect(), margen = 24;
+      var aLaVista = rel.some(function (n) { var r = n.getBoundingClientRect(); return r.left >= v.left + margen && r.right <= v.right - margen; });
+      if (aLaVista) return;
+      var centro = v.left + v.width / 2;
+      var dx = rel.map(function (n) { var r = n.getBoundingClientRect(); return centro - (r.left + r.width / 2); })
+        .sort(function (a, b) { return Math.abs(a) - Math.abs(b); })[0];
+      deslizar(lista, dx, 700);
+    };
+
     var arrastrando = false;
     var mostrarFoto = function (nombre, x, y) {
       var src = nombre.getAttribute("data-foto");
@@ -928,6 +979,7 @@
       activo = nombre;
       nombre.classList.add("activo");
       relacionar(nombre);
+      traerRelacionado(nombre);
       filas.classList.add("con-foco");
       if (!src) { foto.classList.remove("visible"); return; }
       if (foto.getAttribute("src") !== src) foto.setAttribute("src", src);
@@ -969,10 +1021,10 @@
       colocarEn(p.x, p.y);
     });
 
-    /* La marquesina no se detiene en seco: al entrar el cursor en la fila
-       frena (velocidad 1 → 0 en 0.7 s) y al salir vuelve a arrancar. La
-       fila de disqueras no se mueve: al entrar en ella frena la de
-       artistas, para leer los nombres resaltados. */
+    /* Las marquesinas no se detienen en seco: al entrar el cursor en una
+       fila frenan (velocidad 1 → 0 en 0.7 s) y al salir vuelven a arrancar.
+       Frenan las dos filas a la vez, para leer los nombres que se resaltan
+       en la otra (artista ↔ sello). */
     var rampa = function (anim, destino) {
       cancelAnimationFrame(anim._rampa);
       var desde = anim.playbackRate, t0 = performance.now();
@@ -985,8 +1037,7 @@
     };
     var marquesinas = $$("[data-marquesina]", filas);
     $$(".fila-clientes", filas).forEach(function (fila) {
-      var propia = $("[data-marquesina]", fila);
-      var listas = propia ? [propia] : marquesinas;
+      var listas = marquesinas;
       if (!listas.length || !listas[0].getAnimations) return;
       var frenar = function (parar) {
         listas.forEach(function (lista) {
@@ -1075,27 +1126,6 @@
       });
     }
   }
-
-  /* ------------------------------------------ Clientes: filtro en móvil */
-  var filtros = $$("[data-filtro]");
-  var tarjetas = $$(".tarjeta-cliente");
-
-  function contar(tipo) {
-    return tarjetas.filter(function (t) { return tipo === "todo" || t.getAttribute("data-tipo") === tipo; }).length;
-  }
-
-  filtros.forEach(function (boton) {
-    var tipo = boton.getAttribute("data-filtro");
-    var cuenta = $(".interruptor__cuenta", boton);
-    if (cuenta) cuenta.textContent = String(contar(tipo)).padStart(2, "0");
-
-    boton.addEventListener("click", function () {
-      filtros.forEach(function (b) { b.setAttribute("aria-pressed", String(b === boton)); });
-      tarjetas.forEach(function (t) {
-        t.hidden = !(tipo === "todo" || t.getAttribute("data-tipo") === tipo);
-      });
-    });
-  });
 
   /* --------------------------------------------- Formulario: redes sociales */
   var listaRedes = $("#redes-lista");

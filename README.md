@@ -94,6 +94,8 @@ no carga.
   (probado de 1280 × 632 a 2560 × 1300); el texto chico no cambia.
 - **«¿Qué hacemos?»** se queda fijo mientras la lista de servicios sube; baja
   a la par de la cabecera cuando ésta reaparece.
+- **Menú** (cabecera, menú móvil y pie): Inicio · Nosotros · Servicios ·
+  Proceso · Clientes.
 - **Cabecera**: se disuelve al bajar y vuelve al subir (patrón *hide on scroll
   down / show on scroll up*, como Headroom.js), con 10 px de tolerancia.
   También aparece al pasar el cursor por la franja superior (tras 120 ms) y
@@ -168,8 +170,9 @@ no carga.
   - Entre etapas la línea baja primero hacia la izquierda y después una
     «cámara» la sigue hacia abajo, hasta que el punto siguiente queda en el
     mismo lugar de la pantalla (la etapa 3, más abajo, como en el video).
-  - El fondo pasa del rojo al azul: #c30041 → #81008d → #3100ec (arriba de
-    la pantalla; abajo un poco más azul).
+  - El fondo pasa del rojo al rosa y del rosa al azul de la marca: etapa 1
+    #d51115, etapa 2 #ea528d, etapa 3 #3e08f4 → #2b00ff (cada pantalla es
+    un degradado suave hacia el color que sigue).
   - Al estacionarse, el punto aparece con un rebote y late; el texto de la
     etapa entra desde la derecha y sale hacia la derecha antes de que la
     línea arranque.
@@ -184,7 +187,7 @@ no carga.
     termina «De la idea», el alto de la ventana), así que se adapta a
     cualquier tamaño. Prueba: `.tools/proceso.sh`.
 - **Proceso (móvil)**: la curva se descubre con el scroll y los puntos se
-  encienden al llegar a ellos; fondo en degradé del rojo al azul.
+  encienden al llegar a ellos; fondo en degradé rojo → rosa → azul.
 - **Clientes (escritorio)**: la marquesina frena de a poco al entrar el
   cursor en la fila (velocidad 1 → 0 en 0.7 s) y vuelve a arrancar igual al
   salir. Al pasar por un nombre se pone amarillo y los demás se disuelven
@@ -196,14 +199,23 @@ no carga.
   por inercia; también con el deslizamiento horizontal del trackpad. Mueve
   el tiempo de la animación, así que el bucle no se corta. Mientras se
   arrastra no aparece el retrato.
-- **Artistas y disqueras** (`data-sello` en cada nombre): al pasar por un
-  artista también se pone amarilla su disquera; al pasar por una disquera
-  se ponen amarillos sus artistas que estén a la vista y la marquesina de
-  artistas frena para poder leerlos. Babilonia Music: Cartel de Santa,
-  Barbarela, Eduardo III, Richard Ahumada. Virgin Music: Neto Peña, El
-  Malilla, Dani Flow, Rico o Muerto. En la marquesina van intercalados
-  (uno de cada disquera) para que siempre haya de las dos a la vista.
-- **Clientes (móvil)**: filtro Todo / Artistas / Marcas con conteos automáticos.
+- **Artistas y sellos** (`data-sello` en cada nombre): al pasar por un
+  artista también se pone amarillo su sello; al pasar por un sello se ponen
+  amarillos sus artistas que estén a la vista. Las dos filas son
+  marquesinas a la misma velocidad (80 px/s; la duración sale del ancho) y
+  frenan juntas al entrar el cursor. En la de artistas van intercalados
+  (uno de cada sello por turno) para que siempre haya de varios a la vista.
+  - Virgin Music: Neto Peña, El Malilla, Dani Flow, Rico o Muerto.
+  - Babilonia Music: Cartel de Santa, Barbarela, Eduardo III, Richard
+    Ahumada.
+  - Warner Music: Maná, Luis Miguel.
+  - Sólido Records: 008RACCA (**provisional**, falta confirmar su sello).
+- **Clientes (móvil)**: cada sello con su logo y debajo sus artistas, con
+  sangría (empiezan bajo el nombre del sello), a una columna en teléfonos
+  y a dos desde 600 px. Sin filtros.
+- **Al pasar por un artista**, si su sello no está a la vista, la fila de
+  sellos se desliza (0.7 s) hasta mostrarlo; y al pasar por un sello sin
+  artistas a la vista, la de artistas trae al más cercano.
 - **Formulario**: rol (ninguno preseleccionado; chip oscuro al pasar el
   cursor, azul al elegir), redes sociales y validación con el estado de error
   del diseño. Las redes empiezan vacías: «Agregar» muestra Instagram,
@@ -222,9 +234,10 @@ no carga.
   hero que genera `.tools/titular.sh`; si cambia el hero, se regenera **con
   otro nombre** (ver «Caché») y se actualizan las cuatro etiquetas que la
   usan.
-- **Íconos**: `favicon.svg` (logo blanco sobre el azul de la marca, se ve en
-  pestañas claras y oscuras), `favicon-48.png` de respaldo y
-  `apple-touch-icon.png` de 180. Se generan con `.tools/iconos.sh`.
+- **Íconos**: `favicon-negro.svg` (logo blanco sobre negro, se ve en
+  pestañas claras y oscuras), `favicon-negro-48.png` de respaldo y
+  `apple-touch-icon-negro.png` de 180. Se generan con `.tools/iconos.sh`.
+  El logo de 512 de los datos estructurados sigue siendo blanco sobre azul.
 - **Datos estructurados** (JSON-LD): `Organization` (logo de 512, correo,
   Ciudad de México, territorios, servicios, Instagram) y `WebSite`, para el
   nombre del sitio en los resultados.
@@ -268,25 +281,47 @@ súbelo cuando cambien.
 
 ## Pendientes de contenido
 
-- **Descripciones de los 12 servicios**: el Figma sólo trae lorem ipsum; los
-  textos actuales son un borrador para revisar.
+- **Servicios** (5 oct 2026): Marketing queda en 7 (crecimiento de
+  audiencias, promoción digital, análisis de datos, dirección creativa,
+  estrategias de lanzamiento, redes sociales, influencer marketing) y
+  Consultoría en 3 (carrera artística, acuerdos comerciales, gestión de
+  catálogo audiovisual). Se quitaron relaciones públicas, producción
+  audiovisual y distribución musical. Las descripciones son un borrador
+  para revisar.
 - **Imágenes de servicio**: por ahora los servicios van sólo con texto (se
   quitó la de Influencer marketing para que todos sean iguales).
 - **Fotos de clientes**: el retrato del hover mide 80 px y las de
   `assets/img/` son de 192 px, suficiente aun en pantallas retina.
+- **Imágenes provisionales** (reemplazar por las oficiales del cliente,
+  con otro nombre de archivo):
+  - `mana.webp`: «Maná in Denver, 2023», de MerleEllaPatsy, CC BY-SA 4.0
+    (Wikimedia Commons).
+  - `luis-miguel.webp`: «Luis miguel 328», de camposart, CC BY 2.0
+    (Wikimedia Commons).
+  - `warner-music.png`: logo de Warner Music Group (Wikimedia Commons).
+  - `solido-records.png`: marcador con el nombre, hecho con
+    `.tools/logos.sh`.
+  Las fotos con licencia CC piden dar crédito al autor si se publican tal
+  cual.
 - **Versión en inglés** para activar el selector de idioma (cuando exista,
   agregar `hreflang` es/en en el `<head>`).
 
 ## Pendiente de validar con diseño
 
+- **Rojo en resaltes**: los resaltes de texto grande van en rosa
+  (`--rosa`, palette/pink #EA528D): «marcas» en Nosotros y el subrayado de
+  «Amplificado» en el hero. El rojo queda para los botones (hover) y para
+  las etiquetas chicas. El garabato rojo junto a «Marketing digital ·
+  Música» se dejó rojo.
+
 - **Degradado de «Tu talento»**: termina en amarillo sobre fondo blanco;
   las últimas letras («…NTO») quedan con poco contraste (menos de 3:1). Se
   dejó como en el Figma.
 
-- **Lima sobre el rojo del proceso**: «Proceso» y «Etapa 01» en lima sobre
-  #c30041 dan un contraste de 4.0:1 (el mínimo AA para texto de 18 px es
-  4.5:1). En el azul de las etapas 2 y 3 sí cumple. Se dejó como en el
-  video.
+- **Contraste en el proceso**: el lima sobre el rojo (#d51115) da 3.5:1 y
+  sobre el rosa (#ea528d) 2.3:1; el texto blanco sobre el rosa, 3.4:1 (el
+  mínimo AA para texto de 18 px es 4.5:1). En el azul de la etapa 3 sí
+  cumple. Se dejó así por pedido de diseño.
 
 - El sistema de diseño confirma tipografía de escritorio **desde 921 px**,
   pero la composición para 921–1199 px («Desktop: desktop navigation with

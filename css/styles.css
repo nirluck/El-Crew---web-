@@ -17,6 +17,7 @@
 :root {
   --azul:   #2b00ff;
   --rojo:   #d51115;
+  --rosa:   #ea528d;   /* palette/pink: resaltes de texto grande (el rojo queda para botones) */
   --lima:   #d4d916;
   /* Neutros del sistema de diseño (Figma «El Crew / Color palette»):
      texto Neutral/800, oscuro Neutral/900, atenuado Neutral/600,
@@ -515,7 +516,7 @@ legend { padding: 0; }
 /* alineadas arriba: la palabra de 72 no agranda la línea de 80 (como en el Figma) */
 .resalte { position: relative; display: inline-block; vertical-align: top; }
 .resalte--azul { color: var(--azul); }
-.resalte--rojo { color: var(--rojo); }
+.resalte--rosa { color: var(--rosa); }
 .resalte--lima { color: var(--lima); }
 
 .resalte__linea {
@@ -595,7 +596,6 @@ legend { padding: 0; }
   clip-path: inset(50%);
   pointer-events: none;
 }
-.interruptor--rojo .interruptor__pastilla { color: var(--rojo); }
 .interruptor__calco {
   position: absolute;
   display: flex;
@@ -679,11 +679,11 @@ legend { padding: 0; }
 
 
 /* ------------------------------------------------------------ 10. Proceso */
-/* Fondo: del rojo al azul a lo largo del proceso (video de referencia). En
+/* Fondo: del rojo al rosa y del rosa al azul a lo largo del proceso. En
    escritorio con JS el escenario lo va cambiando etapa por etapa (main.js
    repite estos colores). */
 .proceso {
-  background: linear-gradient(180deg, #c30041 0%, #81008d 50%, #3100ec 100%);
+  background: linear-gradient(180deg, #d51115 0%, #ea528d 50%, #2b00ff 100%);
   color: var(--claro);
   padding: 4rem 0;
   overflow: clip;
@@ -779,21 +779,30 @@ legend { padding: 0; }
 
 .clientes__lista { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; }
 
-.interruptor--rojo .interruptor__opcion[aria-pressed="true"] { color: var(--rojo); }
+.clientes__lista { gap: 0; }
 
-.tarjetas-cliente { display: flex; flex-direction: column; gap: 1rem; }
-.tarjeta-cliente { display: flex; align-items: center; gap: .5rem; }
-.tarjeta-cliente[hidden] { display: none; }
+/* Móvil: cada sello con sus artistas debajo. El logo del sello es
+   cuadrado; los artistas, retratos circulares, como en el sistema de diseño. */
+.sello { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(250, 250, 250, .35); }
+.sello:last-child { border-bottom: 1px solid rgba(250, 250, 250, .35); }
+.sello__cabeza { display: flex; align-items: center; gap: .75rem; }
+.sello__cabeza img { flex: none; width: 4rem; height: 4rem; border-radius: .25rem; object-fit: cover; background: #000; }
+.sello__cabeza .display { font-size: 1.5rem; line-height: 1.75rem; }
+.sello__cabeza p { font-size: 1rem; line-height: 1.5rem; }
+/* los artistas, con sangría: empiezan bajo el nombre del sello (logo 4rem +
+   .75rem); a una columna en teléfonos y a dos desde 600 px */
+.sello__artistas { display: grid; grid-template-columns: 1fr; gap: .75rem 1rem; padding-left: 4.75rem; }
+@media (min-width: 37.5em) { .sello__artistas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tarjeta-cliente { display: flex; align-items: center; gap: .5rem; min-width: 0; }
 .tarjeta-cliente img {
   flex: none;
-  width: 5rem;
-  height: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   object-fit: cover;
   background: #000;
 }
-.tarjeta-cliente .display { font-size: 1.25rem; line-height: 1.625rem; }
-.tarjeta-cliente p:last-child { font-size: 1.125rem; line-height: 1.625rem; }
+.tarjeta-cliente .display { font-size: 1.125rem; line-height: 1.375rem; overflow-wrap: break-word; }
 
 /* ----------------------------------------------------------- 12. Contacto */
 .contacto { padding: 4rem 0; }
@@ -1056,14 +1065,14 @@ legend { padding: 0; }
   .proceso__punto-on--movil, .proceso__punto-off--movil { display: none; }
   .proceso__punto-on--escritorio { display: block; }
 
-  .proceso.en-escena { height: 400svh; padding: 0; background: #3100ec; }
+  .proceso.en-escena { height: 400svh; padding: 0; background: #2b00ff; }
   .en-escena .proceso__bloque {
     position: sticky;
     top: 0;
     height: 100svh;
     padding: max(8rem, 22.4svh) 2rem 0;
     overflow: clip;
-    background: linear-gradient(180deg, #c30041, #b10058);
+    background: linear-gradient(180deg, #d51115, #da2133);
   }
   .en-escena .proceso__intro { position: relative; z-index: 2; align-self: flex-start; }
   .en-escena .proceso__recorrido { padding: 0; }
