@@ -43,3 +43,12 @@
   for = "/js/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Página puente de la autorización de TikTok (El Crew Data): no se indexa, no
+# filtra la URL (lleva el código) a terceros y siempre se sirve la versión vigente.
+[[headers]]
+  for = "/tiktok/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "no-referrer"
+    Cache-Control = "no-cache"

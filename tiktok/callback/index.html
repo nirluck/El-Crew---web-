@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Autorización de TikTok | EL CREW</title>
+<link rel="icon" href="/assets/v2/favicon-negro.svg" type="image/svg+xml">
+<!--
+  Página puente de la autorización de TikTok (Marketing API).
+
+  Es la «Advertiser redirect URL» registrada en la app de TikTok for Business:
+  https://somoselcrew.com/tiktok/callback/ (https, sin puerto, termina en /,
+  como exige TikTok). TikTok llega aquí con ?auth_code=…&state=…; esta página
+  reenvía al panel de El Crew Data cuyo origen viaja al final del state
+  (base64url después del último punto), SOLO si está en DESTINOS. Si no, muestra
+  el código para copiarlo a mano. No guarda nada ni lo manda a ningún otro lado.
+-->
+<style>
+  :root { --tinta: #262626; --gris: #525252; --linea: #737373; --claro: #f5f5f5; --azul: #2b00ff; --rojo: #d51115; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--claro); color: var(--tinta);
+         font: 400 1rem/1.5 "Space Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  main { width: 100%; max-width: 560px; }
+  h1 { margin: 0 0 12px; font: 700 1.5rem/1.2 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: -0.01em; }
+  p { margin: 0 0 12px; color: var(--gris); }
+  .marca { margin-bottom: 24px; font-weight: 700; letter-spacing: 0.14em; color: var(--azul); font-size: 0.8125rem; }
+  .codigo { display: flex; gap: 8px; margin: 16px 0; }
+  .codigo input { flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid var(--linea); border-radius: 8px; font: inherit; font-size: 0.875rem; background: #fff; color: var(--tinta); }
+  button { padding: 10px 14px; border: 0; border-radius: 8px; background: var(--tinta); color: #fff; font: inherit; font-size: 0.875rem; cursor: pointer; }
+  .error { color: var(--rojo); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <p class="marca">EL CREW · DATA</p>
+
+  <section id="yendo">
+    <h1>Autorización recibida</h1>
+    <p>Te llevamos de vuelta a El Crew Data…</p>
+  </section>
+
+  <section id="manual" hidden>
+    <h1>Copia el código de autorización</h1>
+    <p>No se pudo volver solo al panel. Copia este código y pégalo en El Crew Data › Conectores › TikTok › «Tengo el código». Vale una hora y un solo uso.</p>
+    <div class="codigo">
+      <input id="valor" readonly aria-label="Código de autorización de TikTok">
+      <button id="copiar" type="button">Copiar</button>
+    </div>
+  </section>
+
+  <section id="sin-codigo" hidden>
+    <h1>No llegó ningún código</h1>
+    <p class="error">TikTok no devolvió un código de autorización (¿se canceló la autorización?). Vuelve a intentarlo desde El Crew Data.</p>
+  </section>
+</main>
+<script>
+  (function () {
+    // Paneles a los que se puede volver. Nada fuera de esta lista.
+    var DESTINOS = [
+      "https://data.somoselcrew.com",
+      "https://nir-server.tail3d1679.ts.net:8444",
+      "http://localhost:3000"
+    ];
+    var RUTA = "/connectors/tiktok/callback";
+
+    var q = new URLSearchParams(window.location.search);
+    var codigo = q.get("auth_code") || q.get("code") || "";
+    var state = q.get("state") || "";
+    var mostrar = function (id) {
+      ["yendo", "manual", "sin-codigo"].forEach(function (s) { document.getElementById(s).hidden = s !== id; });
+    };
+
+    if (!codigo) { mostrar("sin-codigo"); return; }
+
+    var destino = "";
+    try {
+      var b64 = state.slice(state.lastIndexOf(".") + 1).replace(/-/g, "+").replace(/_/g, "/");
+      var origen = atob(b64 + "===".slice((b64.length + 3) % 4));
+      if (state.indexOf(".") > 0 && DESTINOS.indexOf(origen) !== -1) destino = origen;
+    } catch (e) { destino = ""; }
+
+    // El código no debe quedar en el historial de esta página.
+    window.history.replaceState(null, "", window.location.pathname);
+
+    if (destino) {
+      var p = new URLSearchParams({ auth_code: codigo, state: state });
+      window.location.replace(destino + RUTA + "?" + p.toString());
+      return;
+    }
+
+    mostrar("manual");
+    var campo = document.getElementById("valor");
+    campo.value = codigo;
+    document.getElementById("copiar").addEventListener("click", function () {
+      campo.select();
+      var listo = function () { document.getElementById("copiar").textContent = "Copiado"; };
+      if (navigator.clipboard) navigator.clipboard.writeText(codigo).then(listo, function () { document.execCommand("copy"); listo(); });
+      else { document.execCommand("copy"); listo(); }
+    });
+  })();
+</script>
+</body>
+</html>
